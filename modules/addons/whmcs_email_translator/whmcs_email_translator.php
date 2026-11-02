@@ -10,7 +10,7 @@ function whmcs_email_translator_config()
         'name' => 'WHMCS Email Template Translator',
         'description' => 'Import JSON translations for WHMCS email templates.',
         'version' => '1.0.0',
-        'author' => 'OpenAI',
+        'author' => 'HubApp',
         'language' => 'english',
         'fields' => array(),
     );
