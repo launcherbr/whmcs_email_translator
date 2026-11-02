@@ -1,0 +1,644 @@
+{
+    "format":  "whmcs-email-templates",
+    "version":  1,
+    "language":  "",
+    "templates":  [
+                      {
+                          "type":  "product",
+                          "name":  "Hosting Account Welcome Email",
+                          "subject":  "New Account Information",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\u003cp align=\"center\"\u003e\u003cstrong\u003ePLEASE READ THIS EMAIL IN FULL AND PRINT IT FOR YOUR RECORDS\u003c/strong\u003e\u003c/p\u003e\u003cp\u003eThank you for your order from us! Your hosting account has now been setup and this email contains all the information you will need in order to begin using your account.\u003c/p\u003e\u003cp\u003eIf you have requested a domain name during sign up, please keep in mind that your domain name will not be visible on the internet instantly. This process is called propagation and can take up to 48 hours. Until your domain has propagated, your website and email will not function, we have provided a temporary url which you may use to view your website and upload files in the meantime.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eNew Account Information\u003c/strong\u003e\u003c/p\u003e\u003cp\u003eHosting Package: {$service_product_name}\u003cbr /\u003eDomain: {$service_domain}\u003cbr /\u003eFirst Payment Amount: {$service_first_payment_amount}\u003cbr /\u003eRecurring Amount: {$service_recurring_amount}\u003cbr /\u003eBilling Cycle: {$service_billing_cycle}\u003cbr /\u003eNext Due Date: {$service_next_due_date}\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eLogin Details\u003c/strong\u003e\u003c/p\u003e\u003cp\u003eUsername: {$service_username}\u003cbr /\u003ePassword: {$service_password}\u003c/p\u003e\u003cp\u003eControl Panel URL: \u003ca href=\"http://{$service_server_ip}:2082/\"\u003ehttp://{$service_server_ip}:2082/\u003c/a\u003e\u003cbr /\u003eOnce your domain has propagated, you may also use \u003ca href=\"http://www.{$service_domain}:2082/\"\u003ehttp://www.{$service_domain}:2082/\u003c/a\u003e\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eServer Information\u003c/strong\u003e\u003c/p\u003e\u003cp\u003eServer Name: {$service_server_name}\u003cbr /\u003eServer IP: {$service_server_ip}\u003c/p\u003e\u003cp\u003eIf you are using an existing domain with your new hosting account, you will need to update the nameservers to point to the nameservers listed below.\u003c/p\u003e\u003cp\u003eNameserver 1: {$service_ns1} ({$service_ns1_ip})\u003cbr /\u003eNameserver 2: {$service_ns2} ({$service_ns2_ip}){if $service_ns3}\u003cbr /\u003eNameserver 3: {$service_ns3} ({$service_ns3_ip}){/if}{if $service_ns4}\u003cbr /\u003eNameserver 4: {$service_ns4} ({$service_ns4_ip}){/if}\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eUploading Your Website\u003c/strong\u003e\u003c/p\u003e\u003cp\u003eTemporarily you may use one of the addresses given below to manage your web site:\u003c/p\u003e\u003cp\u003eTemporary FTP Hostname: {$service_server_ip}\u003cbr /\u003eTemporary Webpage URL: \u003ca href=\"http://{$service_server_ip}/~{$service_username}/\"\u003ehttp://{$service_server_ip}/~{$service_username}/\u003c/a\u003e\u003c/p\u003e\u003cp\u003eAnd once your domain has propagated you may use the details below:\u003c/p\u003e\u003cp\u003eFTP Hostname: {$service_domain}\u003cbr /\u003eWebpage URL: \u003ca href=\"http://www.{$service_domain}\"\u003ehttp://www.{$service_domain}\u003c/a\u003e\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eEmail Settings\u003c/strong\u003e\u003c/p\u003e\u003cp\u003eFor email accounts that you setup, you should use the following connection details in your email program:\u003c/p\u003e\u003cp\u003ePOP3 Host Address: mail.{$service_domain}\u003cbr /\u003eSMTP Host Address: mail.{$service_domain}\u003cbr /\u003eUsername: The email address you are checking email for\u003cbr /\u003ePassword: As specified in your control panel\u003c/p\u003e\u003cp\u003eThank you for choosing us.\u003c/p\u003e\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "domain",
+                          "name":  "Domain Registration Confirmation",
+                          "subject":  "Domain Registration Confirmation",
+                          "message":  "\u003cp\u003e\r\nDear {$client_name}, \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nThis message is to confirm that your domain purchase has been successful. The details of the domain purchase are below: \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nRegistration Date: {$domain_reg_date}\u003cbr /\u003e\r\nDomain: {$domain_name}\u003cbr /\u003e\r\nRegistration Period: {$domain_reg_period}\u003cbr /\u003e\r\nAmount: {$domain_first_payment_amount}\u003cbr /\u003e\r\nNext Due Date: {$domain_next_due_date} \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nYou may login to your client area at \u003ca href=\"{$whmcs_url}\"\u003e{$whmcs_url}\u003c/a\u003e to manage your new domain. \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n{$signature} \r\n\u003c/p\u003e\r\n",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "Reseller Account Welcome Email",
+                          "subject":  "Reseller Account Information",
+                          "message":  "\u003cp align=\"center\"\u003e\r\n\u003cstrong\u003ePLEASE PRINT THIS MESSAGE FOR YOUR RECORDS - PLEASE READ THIS EMAIL IN FULL.\u003c/strong\u003e\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nIf you have requested a domain name during sign up then this will not be visible on the internet for between 24 and 72 hours. This process is called Propagation. Until your domain has Propagated your website and email will not function, we have provided a temporary url which you may use to view your website and upload files in the meantime.\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nDear {$client_name},\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nThe reseller hosting account for {$service_domain} has been set up. The username and password below are for both cPanel to manage the website at {$service_domain} and WebHostManager to manage your Reseller Account.\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\u003cstrong\u003eNew Account Info\u003c/strong\u003e\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nDomain: {$service_domain}\u003cbr /\u003e\r\nUsername: {$service_username}\u003cbr /\u003e\r\nPassword: {$service_password}\u003cbr /\u003e\r\nHosting Package: {$service_product_name}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nControl Panel: \u003ca href=\"http://{$service_server_ip}:2082/\"\u003ehttp://{$service_server_ip}:2082/\u003c/a\u003e\u003cbr /\u003e\r\nWeb Host Manager: \u003ca href=\"http://{$service_server_ip}:2086/\"\u003ehttp://{$service_server_ip}:2086/\u003c/a\u003e\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n-------------------------------------------------------------------------------------------- \u003cbr /\u003e\r\n\u003cstrong\u003eWeb Host Manager Quick Start\u003c/strong\u003e \u003cbr /\u003e\r\n-------------------------------------------------------------------------------------------- \u003cbr /\u003e\r\n\u003cbr /\u003e\r\nTo access your Web Host Manager, use the following address:\u003cbr /\u003e\r\n\u003cbr /\u003e\r\n\u003ca href=\"http://{$service_server_ip}:2086/\"\u003ehttp://{$service_server_ip}:2086/\u003c/a\u003e\u003cbr /\u003e\r\n\u003cbr /\u003e\r\nThe \u003cstrong\u003ehttp://\u003c/strong\u003e must be in the address line to connect to port :2086 \u003cbr /\u003e\r\nPlease use the username/password given above. \u003cbr /\u003e\r\n\u003cbr /\u003e\r\n\u003cstrong\u003e\u003cem\u003eTo Create a New Account \u003cbr /\u003e\r\n\u003c/em\u003e\u003c/strong\u003e\u003cbr /\u003e\r\nThe first thing you need to do is scroll down on the left and click on \u0026#39Add Package\u0026#39 so that you can create your own hosting packages. You cannot install a domain onto your account without first creating packages.\u003cbr /\u003e\r\n\u003cbr /\u003e\r\n1. Click on \u0026#39Create a New Account\u0026#39 from the left hand side menu \u003cbr /\u003e\r\n2. Put the domain in the \u0026#39Domain\u0026#39 box (no www or http or spaces ? just domainname.com). After putting in the domain, hit TAB and it will automatically create a username. Also, enter a password for the account.\u003cbr /\u003e\r\n3. Your package selection should be one that you created earlier \u003cbr /\u003e\r\n4. Then press the create button \u003cbr /\u003e\r\n\u003cbr /\u003e\r\nThis will give you a confirmation page (you should print this for your records)\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nPlease do not click on anything that you are not sure what it does. Please do not try to alter the WHM Theme from the selection box - fatal errors may occur. \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n-------------------------------------------------------------------------------------------- \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nTemporarily you may use one of the addresses given below manage your web site\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nTemporary FTP Hostname: {$service_server_ip}\u003cbr /\u003e\r\nTemporary Webpage URL: \u003ca href=\"http://{$service_server_ip}/~{$service_username}/\"\u003ehttp://{$service_server_ip}/~{$service_username}/\u003c/a\u003e\u003cbr /\u003e\r\nTemporary Control Panel: \u003ca href=\"http://{$service_server_ip}/cpanel\"\u003ehttp://{$service_server_ip}/cpanel\u003c/a\u003e\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nOnce your domain has Propagated\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nFTP Hostname: www.{$service_domain}\u003cbr /\u003e\r\nWebpage URL: \u003ca href=\"http://www.{$service_domain}\"\u003ehttp://www.{$service_domain}\u003c/a\u003e\u003cbr /\u003e\r\nControl Panel: \u003ca href=\"http://www.{$service_domain}/cpanel\"\u003ehttp://www.{$service_domain}/cpanel\u003c/a\u003e\u003cbr /\u003e\r\nWeb Host Manager: \u003ca href=\"http://www.{$service_domain}/whm\"\u003ehttp://www.{$service_domain}/whm\u003c/a\u003e\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\u003cstrong\u003eMail settings\u003c/strong\u003e\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nCatch all email with your default email account\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nPOP3 Host Address : mail.{$service_domain}\u003cbr /\u003e\r\nSMTP Host Address: mail.{$service_domain}\u003cbr /\u003e\r\nUsername: {$service_username}\u003cbr /\u003e\r\nPassword: {$service_password}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nAdditional mail accounts that you add\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nPOP3 Host Address : mail.{$service_domain}\u003cbr /\u003e\r\nSMTP Host Address: mail.{$service_domain}\u003cbr /\u003e\r\nUsername : The FULL email address that you are picking up from (e.g. info@example.com). \u003cbr /\u003e\r\nIf your email client cannot accept a @ symbol, then you may replace this with a backslash .\u003cbr /\u003e\r\nPassword : As specified in your control panel \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nThank you for choosing us.\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n{$signature}\r\n\u003c/p\u003e\r\n",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "support",
+                          "name":  "Support Ticket Opened",
+                          "subject":  "New Support Ticket Opened",
+                          "message":  "\u003cp\u003e\r\n{$client_name},\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nThank you for contacting our support team. A support ticket has now been opened for your request. You will be notified when a response is made by email. The details of your ticket are shown below.\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nSubject: {$ticket_subject}\u003cbr /\u003e\r\nPriority: {$ticket_priority}\u003cbr /\u003e\r\nStatus: {$ticket_status}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nYou can view the ticket at any time at {$ticket_link}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n{$signature}\r\n\u003c/p\u003e\r\n",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "support",
+                          "name":  "Support Ticket Reply",
+                          "subject":  "Support Ticket Response",
+                          "message":  "\u003cp\u003e\r\n{$ticket_message}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n----------------------------------------------\u003cbr /\u003e\r\nTicket ID: #{$ticket_id}\u003cbr /\u003e\r\nSubject: {$ticket_subject}\u003cbr /\u003e\r\nStatus: {$ticket_status}\u003cbr /\u003e\r\nTicket URL: {$ticket_link}\u003cbr /\u003e\r\n----------------------------------------------\r\n\u003c/p\u003e\r\n",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "general",
+                          "name":  "Client Signup Email",
+                          "subject":  "Welcome",
+                          "message":  "\u003cp\u003eDear {$client_first_name},\u003c/p\u003e\r\n\u003cp\u003eThank you for creating a {$companyname} account. Please review this email in its entirety as it contains important information.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eLogging In\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eYou can access our client area at {$whmcs_link}\u003c/p\u003e\r\n\u003cp\u003eYou will need your email address and the password you chose during signup to login.\u003c/p\u003e\r\n\u003cp\u003eIf you created an account as part of placing a new order with us, you will shortly receive an order confirmation email.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eGetting Support\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eIf you need any help or assistance, you can access our support resources below.\u003c/p\u003e\r\n\u003cul\u003e\r\n\u003cli\u003e\u003ca href=\"{$whmcs_url}/knowledgebase.php\"\u003eKnowledgebase\u003c/a\u003e\u003c/li\u003e\r\n\u003cli\u003e\u003ca href=\"{$whmcs_url}/submitticket.php\"\u003eSubmit a Ticket\u003c/a\u003e\u003c/li\u003e\r\n\u003c/ul\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e\r\n\u003cp\u003e\u003csmall\u003eYou are receiving this email because you recently created an account. If you did not do this, please contact us.\u003c/small\u003e\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "Service Suspension Notification",
+                          "subject":  "Service Suspension Notification",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\u003cp\u003eThis is a notification that your service has now been suspended.  The details of this suspension are below:\u003c/p\u003e\u003cp\u003eProduct/Service: {$service_product_name}\u003cbr /\u003e{if $service_domain}Domain: {$service_domain}\u003cbr /\u003e{/if}Amount: {$service_recurring_amount}\u003cbr /\u003eDue Date: {$service_next_due_date}\u003cbr /\u003eSuspension Reason: \u003cstrong\u003e{$service_suspension_reason}\u003c/strong\u003e\u003c/p\u003e\u003cp\u003ePlease contact us as soon as possible to get your service reactivated.\u003c/p\u003e\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Invoice Payment Confirmation",
+                          "subject":  "Invoice Payment Confirmation",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\r\n\u003cp\u003eThis is a payment receipt for Invoice {$invoice_num} sent on {$invoice_date_created}\u003c/p\u003e\r\n\u003cp\u003e{$invoice_html_contents}\u003c/p\u003e\r\n\u003cp\u003eAmount: {$invoice_last_payment_amount}\u003cbr /\u003eTransaction #: {$invoice_last_payment_transid}\u003cbr /\u003eTotal Paid: {$invoice_amount_paid}\u003cbr /\u003eRemaining Balance: {$invoice_balance}\u003cbr /\u003eStatus: {$invoice_status}\u003c/p\u003e\r\n\u003cp\u003eYou may review your invoice history at any time by logging in to your client area.\u003c/p\u003e\r\n\u003cp\u003eNote: This email will serve as an official receipt for this payment.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Invoice Created",
+                          "subject":  "Customer Invoice",
+                          "message":  "\u003cp\u003e\r\nDear {$client_name}, \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nThis is a notice that an invoice has been generated on {$invoice_date_created}. \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nYour payment method is: {$invoice_payment_method} \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nInvoice #{$invoice_num}\u003cbr /\u003e\r\nAmount Due: {$invoice_total}\u003cbr /\u003e\r\nDue Date: {$invoice_date_due} \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\u003cstrong\u003eInvoice Items\u003c/strong\u003e \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n{$invoice_html_contents} \u003cbr /\u003e\r\n------------------------------------------------------ \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nYou can login to your client area to view and pay the invoice at {$invoice_link} \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n{$signature} \r\n\u003c/p\u003e\r\n",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Invoice Payment Reminder",
+                          "subject":  "Invoice Payment Reminder",
+                          "message":  "\u003cp\u003e\r\nDear {$client_name},\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nThis is a billing reminder that your invoice no. {$invoice_num} which was generated on {$invoice_date_created} is due on {$invoice_date_due}.\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nYour payment method is: {$invoice_payment_method}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nInvoice: {$invoice_num}\u003cbr /\u003e\r\nBalance Due: {$invoice_balance}\u003cbr /\u003e\r\nDue Date: {$invoice_date_due}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nYou can login to your client area to view and pay the invoice at {$invoice_link}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n{$signature}\r\n\u003c/p\u003e\r\n",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "general",
+                          "name":  "Order Confirmation",
+                          "subject":  "Order Confirmation",
+                          "message":  "\u003cp\u003e\r\nDear {$client_name}, \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nWe have received your order and will be processing it shortly. The details of the order are below: \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nOrder Number: \u003cb\u003e{if isset($order_number)}{$order_number}{/if}\u003c/b\u003e\u003c/p\u003e\r\n\u003cp\u003e\r\n{if isset($order_details)}{$order_details}{/if} \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nYou will receive an email from us shortly once your account has been setup. Please quote your order reference number if you wish to contact us about this order. \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n{$signature}\r\n\u003c/p\u003e\r\n",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "Dedicated/VPS Server Welcome Email",
+                          "subject":  "New Dedicated Server Information",
+                          "message":  "\u003cp\u003e\r\nDear {$client_name},\u003cbr /\u003e\r\n\u003cbr /\u003e\r\n\u003cstrong\u003ePLEASE PRINT THIS MESSAGE FOR YOUR RECORDS - PLEASE READ THIS EMAIL IN FULL.\u003c/strong\u003e\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nWe are pleased to tell you that the server you ordered has now been set up and is operational.\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\u003cstrong\u003eServer Details\u003cbr /\u003e\r\n\u003c/strong\u003e=============================\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n{$service_product_name}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nMain IP: {$service_dedicated_ip}\u003cbr /\u003e\r\nRoot pass: {$service_password}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nIP address allocation: \u003cbr /\u003e\r\n{$service_assigned_ips}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nServerName: {$service_domain}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\u003cstrong\u003eWHM Access\u003cbr /\u003e\r\n\u003c/strong\u003e=============================\u003cbr /\u003e\r\n\u003ca href=\"http://xxxxx:2086/\"\u003ehttp://xxxxx:2086\u003c/a\u003e\u003cbr /\u003e\r\nUsername: root\u003cbr /\u003e\r\nPassword: {$service_password}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\u003cstrong\u003eCustom DNS Server Addresses\u003c/strong\u003e\u003cbr /\u003e\r\n=============================\u003cbr /\u003e\r\nThe custom DNS addresses you should set for your domain to use are: \u003cbr /\u003e\r\nPrimary DNS: {$service_ns1}\u003cbr /\u003e\r\nSecondary DNS: {$service_ns2}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nYou will have to login to your registrar and find the area where you can specify both of your custom name server addresses.\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nAfter adding these custom nameservers to your domain registrar control panel, it will take 24 to 48 hours for your domain to delegate authority to your DNS server. Once this has taken effect, your DNS server has control over the DNS records for the domains which use your custom name server addresses. \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\u003cstrong\u003eSSH Access Information\u003cbr /\u003e\r\n\u003c/strong\u003e=============================\u003cbr /\u003e\r\nMain IP Address: xxxxxxxx\u003cbr /\u003e\r\nServer Name: {$service_domain}\u003cbr /\u003e\r\nRoot Password: xxxxxxxx\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nYou can access your server using a free simple SSH client program called Putty located at:\u003cbr /\u003e\r\n\u003ca href=\"http://www.securitytools.net/mirrors/putty/\"\u003ehttp://www.securitytools.net/mirrors/putty/\u003c/a\u003e\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\u003cstrong\u003eSupport\u003c/strong\u003e\u003cbr /\u003e\r\n=============================\u003cbr /\u003e\r\nFor any support needs, please open a ticket at \u003ca href=\"{$whmcs_url}\"\u003e{$whmcs_url}\u003c/a\u003e\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nPlease include any necessary information to provide you with faster service, such as root password, domain names, and a description of the problem / or assistance needed. This will speed up the support time by allowing our administrators to immediately begin diagnosing the problem.\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nThe manual for cPanel can be found here: \u003ca href=\"http://www.cpanel.net/docs/cp/\"\u003ehttp://www.cpanel.net/docs/cp/\u003c/a\u003e \u003cbr /\u003e\r\nFor documentation on using WHM please see the following link: \u003ca href=\"http://www.cpanel.net/docs/whm/index.html\"\u003ehttp://www.cpanel.net/docs/whm/index.html\u003c/a\u003e\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n=============================\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nIf you need to move accounts to the server use: Transfers Copy an account from another server with account password\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\u003ca href=\"http://xxxxxxx:2086/scripts2/norootcopy\"\u003ehttp://xxxxxxx:2086/scripts2/norootcopy\u003c/a\u003e\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nNote the other server must use cpanel to move it.\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n=============================\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n{$signature}\r\n\u003c/p\u003e\r\n",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "Other Product/Service Welcome Email",
+                          "subject":  "New Product Information",
+                          "message":  "\u003cp\u003e\r\nDear {$client_name},\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nYour order for {$service_product_name} has now been activated. Please keep this message for your records.\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nProduct/Service: {$service_product_name}\u003cbr /\u003e\r\nPayment Method: {$service_payment_method}\u003cbr /\u003e\r\nAmount: {$service_recurring_amount}\u003cbr /\u003e\r\nBilling Cycle: {$service_billing_cycle}\u003cbr /\u003e\r\nNext Due Date: {$service_next_due_date}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nThank you for choosing us.\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n{$signature}\r\n\u003c/p\u003e\r\n",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Credit Card Payment Confirmation",
+                          "subject":  "Credit Card Payment Confirmation",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\r\n\u003cp\u003eThis is a payment receipt for Invoice {$invoice_num} sent on {$invoice_date_created}\u003c/p\u003e\r\n\u003cp\u003e{$invoice_html_contents}\u003c/p\u003e\r\n\u003cp\u003eAmount: {$invoice_last_payment_amount}\u003cbr /\u003ePay Method: {$invoice_payment_method} ({$invoice_pay_method_display_name})\u003cbr /\u003eTransaction #: {$invoice_last_payment_transid}\u003cbr /\u003eTotal Paid: {$invoice_amount_paid}\u003cbr /\u003eRemaining Balance: {$invoice_balance}\u003cbr /\u003eStatus: {$invoice_status}\u003c/p\u003e\r\n\u003cp\u003eYou may review your invoice history at any time by logging in to your client area.\u003c/p\u003e\r\n\u003cp\u003eNote: This email will serve as an official receipt for this payment.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Credit Card Payment Failed",
+                          "subject":  "Invoice Payment Failed",
+                          "message":  "\u003cp\u003eHi {$client_name},\u003c/p\u003e\r\n\u003cp\u003eWe attempted to process payment for invoice #{$invoice_num} but your selected payment method failed.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eInvoice Date:\u003c/strong\u003e {$invoice_date_created}\u003cbr /\u003e\u003cstrong\u003eInvoice #\u003c/strong\u003e{$invoice_num}\u003cbr /\u003e\u003cstrong\u003eAmount Due:\u003c/strong\u003e {$invoice_total}\u003cbr /\u003e\u003cstrong\u003eDue Date:\u003c/strong\u003e {$invoice_date_due}\u003cbr /\u003e\u003cstrong\u003eStatus:\u003c/strong\u003e {$invoice_status}\u003c/p\u003e\r\n\u003cp\u003eYou must log in at {$invoice_link} and pay your invoice manually. During the payment process, you can also update your account\u0027s preferred payment method.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Credit Card Invoice Created",
+                          "subject":  "Invoice Generated",
+                          "message":  "\u003cp\u003eHi {$client_name},\u003c/p\u003e\r\n\u003cp\u003eWe generated an invoice for you on {$invoice_date_created}:\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eInvoice Date:\u003c/strong\u003e {$invoice_date_created}\u003cbr /\u003e\u003cstrong\u003eInvoice #\u003c/strong\u003e{$invoice_num}\u003cbr /\u003e\u003cstrong\u003eAmount Due:\u003c/strong\u003e {$invoice_total}\u003cbr /\u003e\u003cstrong\u003eDue Date:\u003c/strong\u003e {$invoice_date_due}\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eInvoice Items:\u003c/strong\u003e\u003cbr /\u003e{$invoice_html_contents}\u003c/p\u003e\r\n\u003cp\u003e{if $invoice_auto_capture_available}We will process payment using your selected payment method ({$invoice_pay_method_display_name}) on {$invoice_next_payment_attempt_date}. To pay with a different payment method, log in at {$invoice_link}. Click \u003cstrong\u003ePay Now\u003c/strong\u003e and follow the displayed instructions.{else}To pay your invoice, log in at {$invoice_link}. Click \u003cstrong\u003ePay Now\u003c/strong\u003e and follow the displayed instructions.{/if}\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "affiliate",
+                          "name":  "Affiliate Monthly Referrals Report",
+                          "subject":  "Affiliate Monthly Referrals Report",
+                          "message":  "\u003cp\u003e\r\nDear {$client_name}, \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nThis is your monthly affiliate referrals report. You can view your referral statistics at any time by logging in to the client area. \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nTotal Visitors Referred: {$affiliate_total_visits}\u003cbr /\u003e\r\nCurrent Earnings: {$affiliate_balance}\u003cbr /\u003e\r\nAmount Withdrawn: {$affiliate_withdrawn} \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\u003cstrong\u003eYour New Signups this Month\u003c/strong\u003e \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n{$affiliate_referrals_table} \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nRemember, you can refer new customers using your unique affiliate link: {$affiliate_referral_url} \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n{$signature}\r\n\u003c/p\u003e\r\n",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "support",
+                          "name":  "Support Ticket Opened by Admin",
+                          "subject":  "{$ticket_subject}",
+                          "message":  "{$ticket_message}",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "First Invoice Overdue Notice",
+                          "subject":  "First Invoice Overdue Notice",
+                          "message":  "\u003cp\u003e Dear {$client_name}, \u003c/p\u003e \u003cp\u003e This is a billing notice that your invoice no. {$invoice_num} which was generated on {$invoice_date_created} is now overdue. \u003c/p\u003e \u003cp\u003e Your payment method is: {$invoice_payment_method} \u003c/p\u003e \u003cp\u003e Invoice: {$invoice_num}\u003cbr /\u003e Balance Due: {$invoice_balance}\u003cbr /\u003e Due Date: {$invoice_date_due} \u003c/p\u003e \u003cp\u003e You can login to your client area to view and pay the invoice at {$invoice_link} \u003c/p\u003e \u003cp\u003e {$signature} \u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "SHOUTcast Welcome Email",
+                          "subject":  "SHOUTcast New Account Information",
+                          "message":  "\u003cp align=\"center\"\u003e\r\n\u003cstrong\u003ePLEASE READ THIS EMAIL IN FULL AND PRINT IT FOR YOUR RECORDS\u003c/strong\u003e \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nDear {$client_name}, \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nThank you for your order from us! Your shoutcast account has now been setup and this email contains all the information you will need in order to begin using your account. \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\u003cstrong\u003eNew Account Information\u003c/strong\u003e \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nDomain: {$service_domain}\u003cbr /\u003e\r\nUsername: {$service_username}\u003cbr /\u003e\r\nPassword: {$service_password} \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n\u003cstrong\u003eServer Information\u003c/strong\u003e \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nServer Name: {$service_server_name}\u003cbr /\u003e\r\nServer IP: {$service_server_ip}\u003cbr /\u003e\r\nNameserver 1: {$service_ns1}\u003cbr /\u003e\r\nNameserver 1 IP: {$service_ns1_ip}\u003cbr /\u003e\r\nNameserver 2: {$service_ns2} \u003cbr /\u003e\r\nNameserver 2 IP: {$service_ns2_ip} \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\nThank you for choosing us. \r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n{$signature}\r\n\u003c/p\u003e\r\n",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Second Invoice Overdue Notice",
+                          "subject":  "Second Invoice Overdue Notice",
+                          "message":  "\u003cp\u003e Dear {$client_name}, \u003c/p\u003e \u003cp\u003e This is the second billing notice that your invoice no. {$invoice_num} which was generated on {$invoice_date_created} is now overdue. \u003c/p\u003e \u003cp\u003e Your payment method is: {$invoice_payment_method} \u003c/p\u003e \u003cp\u003e Invoice: {$invoice_num}\u003cbr /\u003e Balance Due: {$invoice_balance}\u003cbr /\u003e Due Date: {$invoice_date_due} \u003c/p\u003e \u003cp\u003e You can login to your client area to view and pay the invoice at {$invoice_link} \u003c/p\u003e \u003cp\u003e {$signature} \u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Third Invoice Overdue Notice",
+                          "subject":  "Third Invoice Overdue Notice",
+                          "message":  "\u003cp\u003e Dear {$client_name}, \u003c/p\u003e \u003cp\u003e This is the third and final billing notice that your invoice no. {$invoice_num} which was generated on {$invoice_date_created} is now overdue. Failure to make payment will result in account suspension.\u003c/p\u003e \u003cp\u003e Your payment method is: {$invoice_payment_method} \u003c/p\u003e \u003cp\u003e Invoice: {$invoice_num}\u003cbr /\u003e Balance Due: {$invoice_balance}\u003cbr /\u003e Due Date: {$invoice_date_due} \u003c/p\u003e \u003cp\u003e You can login to your client area to view and pay the invoice at {$invoice_link} \u003c/p\u003e \u003cp\u003e {$signature} \u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "domain",
+                          "name":  "Domain Transfer Initiated",
+                          "subject":  "Domain Transfer Initiated",
+                          "message":  "\u003cp\u003eDear {$client_name}, \u003c/p\u003e\u003cp\u003eThank you for your domain transfer order. Your order has been received and we have now initiated the transfer process. The details of the domain purchase are below: \u003c/p\u003e\u003cp\u003eDomain: {$domain_name}\u003cbr /\u003eRegistration Length: {$domain_reg_period}\u003cbr /\u003eTransfer Price: {$domain_first_payment_amount}\u003cbr /\u003eRenewal Price: {$domain_recurring_amount}\u003cbr /\u003eNext Due Date: {$domain_next_due_date} \u003c/p\u003e\u003cp\u003eYou may login to your client area at \u003ca href=\"{$whmcs_url}\"\u003e{$whmcs_url}\u003c/a\u003e to manage your domain. \u003c/p\u003e\u003cp\u003e{$signature} \u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "domain",
+                          "name":  "Domain Renewal Confirmation",
+                          "subject":  "Domain Renewal Confirmation",
+                          "message":  "\u003cp\u003eDear {$client_name}, \u003c/p\u003e\u003cp\u003eThank you for your domain renewal order. Your domain renewal request for the domain listed below has now been completed.\u003c/p\u003e\u003cp\u003eDomain: {$domain_name}\u003cbr /\u003eRenewal Length: {$domain_reg_period}\u003cbr /\u003eRenewal Price: {$domain_recurring_amount}\u003cbr /\u003eNext Due Date: {$domain_next_due_date} \u003c/p\u003e\u003cp\u003eYou may login to your client area at \u003ca href=\"{$whmcs_url}\"\u003e{$whmcs_url}\u003c/a\u003e to manage your domain. \u003c/p\u003e\u003cp\u003e{$signature} \u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "domain",
+                          "name":  "Upcoming Domain Renewal Notice",
+                          "subject":  "Upcoming Domain Renewal Notice",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\r\n\u003cp\u003eThis is a reminder that the domain listed below is scheduled to expire soon.\u003c/p\u003e\r\n\u003cp\u003eDomain Name - Expiry Date - Description\u003c/p\u003e\r\n\u003cp\u003e--------------------------------------------------------------\u003c/p\u003e \r\n\u003cp\u003e{$domain_name} - {$domain_next_due_date} - Expires in {$domain_days_until_nextdue} Days\u003c/p\u003e\r\n\u003cp\u003ePlease be aware that if your domain name expires, any web site or email services associated with it will stop working.\u003c/p\u003e\r\n\u003cp\u003eRenew it now to avoid interruption in service.\u003c/p\u003e\r\n\u003cp\u003eTo renew your domain, \u003ca href=\"{$domain_renewal_url}\"\u003eclick here\u003c/a\u003e.\u003c/p\u003e\r\n\u003cp\u003eTo view and manage your domains, you can login to our client area here: \u003ca href=\"{$domains_manage_url}\"\u003eClient Area\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003eIf you have any questions, please reply to this email. Thank you for using our domain name services.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "support",
+                          "name":  "Clients Only Bounce Message",
+                          "subject":  "Support Ticket Not Opened",
+                          "message":  "\u003cp\u003e{$client_name},\u003c/p\u003e\u003cp\u003eYour email to our support system could not be accepted because it was not recognized as coming from an email address belonging to one of our customers.  If you need assistance, please email from the address you registered with us that you use to login to our client area.\u003c/p\u003e\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "general",
+                          "name":  "Credit Card Expiring Soon",
+                          "subject":  "Credit Card Expiring Soon",
+                          "message":  "\u003cp\u003eDear {$client_name}, \u003c/p\u003e\u003cp\u003eThis is a notice to inform you that your {$client_cc_type} credit card ending with {$client_cc_number} will be expiring next month on {$client_cc_expiry}. Please login to update your credit card information as soon as possible and prevent any interruptions in service at \u003ca href=\"{$whmcs_url}\"\u003e{$whmcs_url}\u003c/a\u003e\u003cbr /\u003e\u003cbr /\u003eIf you have any questions regarding your account, please open a support ticket from the client area.\u003c/p\u003e\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "support",
+                          "name":  "Support Ticket Auto Close Notification",
+                          "subject":  "Support Ticket Resolved",
+                          "message":  "\u003cp\u003e{$client_name},\u003c/p\u003e\u003cp\u003eThis is a notification to let you know that we are changing the status of your ticket #{$ticket_id} to Closed as we have not received a response from you in over {$ticket_auto_close_time} hours.\u003c/p\u003e\u003cp\u003eSubject: {$ticket_subject}\u003cbr\u003eDepartment: {$ticket_department}\u003cbr\u003ePriority: {$ticket_priority}\u003cbr\u003eStatus: {$ticket_status}\u003c/p\u003e\u003cp\u003eIf you have any further questions then please just reply to re-open the ticket.\u003c/p\u003e\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Credit Card Payment Due",
+                          "subject":  "Invoice Payment Due",
+                          "message":  "\u003cp\u003eHi {$client_name},\u003c/p\u003e\r\n\u003cp\u003ePayment for invoice #{$invoice_num} is due on {$invoice_next_payment_attempt_date}.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eInvoice Date:\u003c/strong\u003e {$invoice_date_created}\u003cbr /\u003e\u003cstrong\u003eInvoice #\u003c/strong\u003e{$invoice_num}\u003cbr /\u003e\u003cstrong\u003eAmount Due:\u003c/strong\u003e {$invoice_total}\u003cbr /\u003e\u003cstrong\u003eDue Date:\u003c/strong\u003e {$invoice_date_due}\u003cbr /\u003e\u003cstrong\u003eStatus:\u003c/strong\u003e {$invoice_status}\u003c/p\u003e\r\n\u003cp\u003eWe cannot automatically process payment because you do not have a payment method on file. To add a payment method to your account or pay manually, log in at {$invoice_link}.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "Cancellation Request Confirmation",
+                          "subject":  "Cancellation Request Confirmation",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\u003cp\u003eThis email is to confirm that we have received your cancellation request for the service listed below.\u003c/p\u003e\u003cp\u003eProduct/Service: {$service_product_name}\u003cbr /\u003eDomain: {$service_domain}\u003c/p\u003e\u003cp\u003e{if $service_is_immediate_cancellation}The service will be terminated within the next 24 hours.{else}The service will be cancelled at the end of your current billing period on {$service_next_due_date}.{/if}\u003c/p\u003e\u003cp\u003eThank you for using {$company_name} and we hope to see you again in the future.\u003c/p\u003e\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "general",
+                          "name":  "Quote Delivery with PDF",
+                          "subject":  "Quote #{$quote_number} - {$quote_subject}",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\u003cp\u003eHere is the quote you requested for {$quote_subject}. The quote is valid until {$quote_valid_until}. You may {if $client_id}view the quote at any time at {$quote_link} and {/if}simply reply to this email with any further questions or requirement.\u003c/p\u003e\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Automatic Setup Failed",
+                          "subject":  "WHMCS Automatic Setup Failed",
+                          "message":  "\u003cp\u003eAn order has received its first payment but the automatic provisioning has failed and requires you to manually check \u0026 resolve.\u003c/p\u003e\r\n\u003cp\u003eClient ID: {$client_id}\u003cbr /\u003e{if $service_id}Service ID: {$service_id}\u003cbr /\u003eProduct/Service: {$service_product}\u003cbr /\u003eDomain: {$service_domain}{else}Domain ID: {$domain_id}\u003cbr /\u003eRegistration Type: {$domain_type}\u003cbr /\u003eDomain: {$domain_name}{/if}\u003cbr /\u003eError: {$error_msg}\u003c/p\u003e\r\n\u003cp\u003e{$whmcs_admin_link}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Automatic Setup Successful",
+                          "subject":  "WHMCS Automatic Setup Successful",
+                          "message":  "\u003cp\u003eAn order has received its first payment and the product/service has been automatically provisioned successfully.\u003c/p\u003e\r\n\u003cp\u003eClient ID: {$client_id}\u003cbr /\u003e{if $service_id}Service ID: {$service_id}\u003cbr /\u003eProduct/Service: {$service_product}\u003cbr /\u003eDomain: {$service_domain}{else}Domain ID: {$domain_id}\u003cbr /\u003eRegistration Type: {$domain_type}\u003cbr /\u003eDomain: {$domain_name}{/if}\u003c/p\u003e\r\n\u003cp\u003e{$whmcs_admin_link}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Domain Renewal Failed",
+                          "subject":  "WHMCS Automatic Domain Renewal Failed",
+                          "message":  "\u003cp\u003eAn invoice for the renewal of a domain has been paid but the renewal request submitted to the registrar failed.\u003c/p\u003e\r\n\u003cp\u003eClient ID: {$client_id}\u003cbr /\u003eDomain ID: {$domain_id}\u003cbr /\u003eDomain Name: {$domain_name}\u003cbr /\u003eError: {$error_msg}\u003c/p\u003e\r\n\u003cp\u003e{$whmcs_admin_link}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Domain Renewal Successful",
+                          "subject":  "WHMCS Automatic Domain Renewal Successful",
+                          "message":  "\u003cp\u003eAn invoice for the renewal of a domain has been paid and the renewal request was submitted to the registrar successfully.\u003c/p\u003e\r\n\u003cp\u003eClient ID: {$client_id}\u003cbr /\u003eDomain ID: {$domain_id}\u003cbr /\u003eDomain Name: {$domain_name}\u003c/p\u003e\r\n\u003cp\u003e{$whmcs_admin_link}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "New Order Notification",
+                          "subject":  "WHMCS New Order Notification",
+                          "message":  "{assign \"displayTotalToday\" true}\n\u003cp\u003e\u003cstrong\u003eOrder Information\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eOrder ID: {$order_id}\u003cbr /\u003e\r\nOrder Number: {$order_number}\u003cbr /\u003e\r\nDate/Time: {$order_date}\u003cbr /\u003e\r\nInvoice Number: {if $custom_invoice_number}{$custom_invoice_number}{else}{$invoice_id}{/if}\u003cbr /\u003e\r\nPayment Method: {$order_payment_method}\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eCustomer Information\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eCustomer ID: {$client_id}\u003cbr /\u003e\r\nName: {$client_first_name} {$client_last_name}\u003cbr /\u003e\r\nEmail: {$client_email}\u003cbr /\u003e\r\nCompany: {$client_company_name}\u003cbr /\u003e\r\nAddress 1: {$client_address1}\u003cbr /\u003e\r\nAddress 2: {$client_address2}\u003cbr /\u003e\r\nCity: {$client_city}\u003cbr /\u003e\r\nState: {$client_state}\u003cbr /\u003e\r\nPostcode: {$client_postcode}\u003cbr /\u003e\r\nCountry: {$client_country}\u003cbr /\u003e\r\nPhone Number: {$client_phonenumber}\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eOrder Items\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003e{foreach $order_items_array as $key =\u003e $value}\n    {if $value.service}\n        Product/Service: {$value.service}\u003cbr\u003e\n        {if !empty($value.domain)}Domain: {$value.domain}\u003cbr\u003e{/if}\n        {if !empty($value.extra)}{foreach $value.extra as $extra}{$extra}\u003cbr\u003e{/foreach}{/if}\n        First Payment Amount: {$value.firstPayment}\u003cbr\u003e\n        {if !empty($value.recurringPayment)}Recurring Amount: {$value.recurringPayment}\u003cbr\u003e{/if}\n        Billing Cycle: {$value.cycle}\u003cbr\u003e\n        {if $value.qty}\n            Quantity: {$value.qty}\u003cbr\u003e\n            Total: {$value.totalDue}\u003cbr\u003e\n        {/if}\u003cbr\u003e\n    {elseif !empty($value.domain)}\n        Domain Action: {$value.type}\u003cbr\u003e\n        Domain: {$value.domain}\u003cbr\u003e\n        {if !empty($value.firstPayment)}First Payment Amount: {$value.firstPayment}\u003cbr\u003e{/if}\n        {if !empty($value.recurringPayment)}Recurring Amount: {$value.recurringPayment}\u003cbr\u003e{/if}\n        Registration Period: {$value.registrationPeriod}\u003cbr\u003e\n        {if $value.dnsManagement}DNS Management\u003cbr\u003e{/if}\n        {if $value.emailForwarding}Email Forwarding\u003cbr\u003e{/if}\n        {if $value.idProtection}ID Protection\u003cbr\u003e{/if}\n    {elseif $value.addon}\n        {if !empty($value.qty)}{$value.qty} x {/if}Addon: {$value.addon}\u003cbr\u003e\n        Setup Fee: {$value.setupFee}\u003cbr\u003e\n        {if !empty($value.recurringPayment)}Recurring Amount: {$value.recurringPayment}\u003cbr\u003e{/if}\n        Billing Cycle: {$value.cycle}\u003cbr\u003e\n    {elseif $value.upgrade}\n{$value.upgrade}\n{$displayTotalToday = false}\n{/if}\u003cbr\u003e\n{/foreach}\n{if $displayTotalToday eq true}Total Due Today: {$total_due_today}{/if}\u003c/p\u003e\r\n{if $order_notes}\u003cp\u003e\u003cstrong\u003eOrder Notes\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003e{$order_notes}\u003c/p\u003e{/if}\r\n\u003cp\u003e\u003cstrong\u003eISP Information\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eIP: {$client_ip}\u003cbr /\u003e\r\nHost: {$client_hostname}\u003c/p\u003e\u003cp\u003e\u003ca href=\"{$whmcs_admin_url}orders.php?action=view\u0026id={$order_id}\"\u003e{$whmcs_admin_url}orders.php?action=view\u0026id={$order_id}\u003c/a\u003e\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Service Unsuspension Failed",
+                          "subject":  "WHMCS Service Unsuspension Failed",
+                          "message":  "\u003cp\u003eThis product/service has received its next payment but the automatic reactivation has failed.\u003c/p\u003e\r\n\u003cp\u003eClient ID: {$client_id}\u003cbr /\u003eService ID: {$service_id}\u003cbr /\u003eProduct/Service: {$service_product}\u003cbr /\u003eDomain: {$service_domain}\u003cbr /\u003eError: {$error_msg}\u003c/p\u003e\r\n\u003cp\u003e{$whmcs_admin_link}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Service Unsuspension Successful",
+                          "subject":  "WHMCS Service Unsuspension Successful",
+                          "message":  "\u003cp\u003eThis product/service has received its next payment and has been reactivated successfully.\u003c/p\u003e\r\n\u003cp\u003eClient ID: {$client_id}\u003cbr /\u003eService ID: {$service_id}\u003cbr /\u003eProduct/Service: {$service_product}\u003cbr /\u003eDomain: {$service_domain}\u003c/p\u003e\r\n\u003cp\u003e{$whmcs_admin_link}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Escalation Rule Notification",
+                          "subject":  "[Ticket ID: {$ticket_tid}] Escalation Rule Notification",
+                          "message":  "\u003cp\u003eThe escalation rule {$rule_name} has just been applied to this ticket.\u003c/p\u003e\u003cp\u003eClient: {$client_name}{if $client_id} #{$client_id}{/if} \u003cbr /\u003eDepartment: {$ticket_department} \u003cbr /\u003eSubject: {$ticket_subject} \u003cbr /\u003ePriority: {$ticket_priority}\u003c/p\u003e\u003cp\u003e---\u003cbr /\u003e{$ticket_message}\u003cbr /\u003e---\u003c/p\u003e\u003cp\u003eYou can respond to this ticket by simply replying to this email or through the admin area at the url below.\u003c/p\u003e\u003cp\u003e\u003ca href=\"{$whmcs_admin_url}supporttickets.php?action=viewticket\u0026id={$ticket_id}\"\u003e{$whmcs_admin_url}supporttickets.php?action=viewticket\u0026id={$ticket_id}\u003c/a\u003e\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Invoice Refund Confirmation",
+                          "subject":  "Invoice Refund Confirmation",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\r\n\u003cp\u003eThis is confirmation that a {if $invoice_status eq \"Refunded\"}full{else}partial{/if} refund has been processed for Invoice #{$invoice_num}\u003c/p\u003e\r\n\u003cp\u003eThe refund has been {if $invoice_refund_type eq \"credit\"}credited to your account balance with us{else}returned via the payment method you originally paid with{/if}.\u003c/p\u003e\r\n\u003cp\u003e{$invoice_html_contents}\u003c/p\u003e\r\n\u003cp\u003eAmount Refunded: {$invoice_last_payment_amount}{if $invoice_last_payment_transid}\u003cbr /\u003eTransaction #: {$invoice_last_payment_transid}{/if}\u003c/p\u003e\r\n\u003cp\u003eYou may review your invoice history at any time by logging in to your client area.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "New Cancellation Request",
+                          "subject":  "New Cancellation Request",
+                          "message":  "\u003cp\u003eA new cancellation request has been submitted.\u003c/p\u003e\u003cp\u003eClient ID: {$client_id}\u003cbr\u003eClient Name: {$clientname}\u003cbr\u003eService ID: {$service_id}\u003cbr\u003eProduct Name: {$product_name}\u003cbr\u003eCancellation Type: {$service_cancellation_type}\u003cbr\u003eCancellation Reason: {$service_cancellation_reason}\u003c/p\u003e\u003cp\u003e{$whmcs_admin_link}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "domain",
+                          "name":  "Domain Transfer Failed",
+                          "subject":  "Domain Transfer Failed: {$domain_name}",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\u003cp\u003eRecently you placed a domain transfer order with us but unfortunately it has failed. The reason for the failure if available is shown below so once this has been resolved, please contact us to re-attempt the transfer.\u003c/p\u003e\u003cp\u003eDomain: {$domain_name}\u003cbr\u003eFailure Reason: {$domain_transfer_failure_reason}\u003c/p\u003e\u003cp\u003eIf you have any questions, please open a support ticket from our client area @ {$whmcs_link}\u003c/p\u003e\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "general",
+                          "name":  "Quote Accepted",
+                          "subject":  "Quote #{$quote_number} Accepted - {$quote_subject}",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\u003cp\u003eThis is a confirmation that you have accepted the generated quote from {$quote_date_created}.\u003c/p\u003e\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Quote Accepted Notification",
+                          "subject":  "Quote #{$quote_number} Accepted - {$quote_subject}",
+                          "message":  "\u003cp\u003eA quote has been accepted by the following customer.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eCustomer Information\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eCustomer ID: {$client_id}\u003cbr /\u003e\r\nName: {$clientname}\u003cbr /\u003e\r\nEmail: {$client_email}\u003cbr /\u003e\r\nCompany: {$client_company_name}\u003cbr /\u003e\r\nAddress 1: {$client_address1}\u003cbr /\u003e\r\nAddress 2: {$client_address2}\u003cbr /\u003e\r\nCity: {$client_city}\u003cbr /\u003e\r\nState: {$client_state}\u003cbr /\u003e\r\nPostcode: {$client_postcode}\u003cbr /\u003e\r\nCountry: {$client_country}\u003cbr /\u003e\r\nPhone Number: {$client_phonenumber}\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eQuote Information\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eQuote #: {$quote_number}\u003cbr /\u003e\r\nQuote Subject: {$quote_subject}\u003c/p\u003e\u003cp\u003e\u003ca href=\"{$whmcs_admin_url}quotes.php?action=manage\u0026id={$quote_number}\"\u003e{$whmcs_admin_url}quotes.php?action=manage\u0026id={$quote_number}\u003c/a\u003e\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "support",
+                          "name":  "Support Ticket Feedback Request",
+                          "subject":  "Your Feedback is Requested for Ticket #{$ticket_id}",
+                          "message":  "\u003cp\u003eThis support request has been marked as completed.\u003c/p\u003e\u003cp\u003eWe would really appreciate it if you would just take a moment to let us know about the quality of your experience.\u003c/p\u003e\u003cp\u003e\u003ca href=\"{$ticket_url}\u0026feedback=1\"\u003e{$ticket_url}\u0026feedback=1\u003c/a\u003e\u003c/p\u003e\u003cp\u003eYour feedback is very important to us.\u003c/p\u003e\u003cp\u003eThank you for your business.\u003c/p\u003e\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "support",
+                          "name":  "Replies Only Bounce Message",
+                          "subject":  "Online Submission Required",
+                          "message":  "\u003cp\u003e{$client_name},\u003c/p\u003e\u003cp\u003eYour email to our support system could not be accepted because we require you to submit all tickets via our online client support portal. You can do this at the URL below.\u003c/p\u003e\u003cp\u003e\u003ca href=\"{$whmcs_url}/submitticket.php\"\u003e{$whmcs_url}/submitticket.php\u003c/a\u003e\u003c/p\u003e\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "general",
+                          "name":  "Unsubscribe Confirmation",
+                          "subject":  "Unsubscribe Confirmation",
+                          "message":  "Dear {$client_name},\u003cbr /\u003e\u003cbr /\u003eWe have now removed your email address from our mailing list.\u003cbr /\u003e\u003cbr /\u003eIf this was a mistake or you change your mind, you can re-subscribe at any time from the My Details section of our client area.\u003cbr /\u003e\u003cbr /\u003e\u003ca href=\"{$whmcs_url}/clientarea.php?action=details\"\u003e{$whmcs_url}/clientarea.php?action=details\u003c/a\u003e\u003cbr /\u003e\u003cbr /\u003e{$signature}",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "support",
+                          "name":  "Closed Ticket Bounce Message",
+                          "subject":  "Closed Ticket Bounce Message",
+                          "message":  "\u003cp\u003e{$client_name},\u003c/p\u003e\n\u003cp\u003eYour email to our ticket system could not be accepted because the ticket being responded to has already been closed.\u003c/p\u003e\n\u003cp\u003e{if $client_id}If you wish to reopen this ticket, you can do so from our client area:\n{$ticket_link}{else}To open a new ticket, please visit:\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"{$whmcs_url}/submitticket.php\"\u003e{$whmcs_url}/submitticket.php\u003c/a\u003e{/if}\u003c/p\u003e\n\u003cp\u003eThis is an automated response from our support system.\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "domain",
+                          "name":  "Expired Domain Notice",
+                          "subject":  "Expired Domain Notice",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003eThe domain name listed below expired {$domain_days_after_expiry} days ago.\u003c/p\u003e\n\u003cp\u003e{$domain_name}\u003c/p\u003e\n\u003cp\u003eTo ensure that the domain isn\u0027t registered by someone else, you should renew it now. To renew the domain, please visit the following page and follow the steps shown: \u003ca title=\"{$whmcs_url}/cart.php?gid=renewals\" href=\"{$whmcs_url}/cart.php?gid=renewals\"\u003e{$whmcs_url}/cart.php?gid=renewals\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003eDue to the domain expiring, the domain will not be accessible so any web site or email services associated with it will stop working. You may be able to renew it for up to 30 days after the renewal date.\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "Service Unsuspension Notification",
+                          "subject":  "Service Unsuspension Notification",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003eThis is a notification that your service has now been unsuspended. The details of this unsuspension are below:\u003c/p\u003e\n\u003cp\u003eProduct/Service: {$service_product_name}\u003cbr /\u003e{if $service_domain}Domain: {$service_domain}\u003cbr /\u003e{/if}Amount: {$service_recurring_amount}\u003cbr /\u003eDue Date: {$service_next_due_date}\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Manual Upgrade Required",
+                          "subject":  "Manual Upgrade Required",
+                          "message":  "\u003cp\u003eAn upgrade order has received its payment, but does not support automatic upgrades and requires manually processing.\u003c/p\u003e\n\u003cp\u003eClient ID: {$client_id}\u003cbr /\u003eService ID: {$service_id}\u003cbr /\u003eOrder ID: {$order_id}\u003c/p\u003e\n\u003cp\u003e{if $upgrade_type eq \u0027package\u0027}New Package ID: {$new_package_id}\u003cbr /\u003eExisting Billing Cycle: {$billing_cycle}\u003cbr /\u003eNew Billing Cycle: {$new_billing_cycle}{else}Configurable Option: {$config_id}\u003cbr /\u003eOption Type: {$option_type}\u003cbr /\u003eCurrent Value: {$current_value}\u003cbr /\u003eNew Value: {$new_value}{/if}\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"{$whmcs_admin_url}orders.php?action=view\u0026id={$order_id}\"\u003e\n{$whmcs_admin_url}orders.php?action=view\u0026id={$order_id}\u003c/a\u003e\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Support Ticket Change Notification",
+                          "subject":  "[Ticket ID: {$ticket_tid}] {$ticket_subject}",
+                          "message":  "{if $newTicket}\r\n    \u003cp\u003eTicket #\u003ca href=\"{$whmcs_admin_url}supporttickets.php?action=viewticket\u0026id={$ticket_id}\"\u003e\u003cstrong\u003e{$ticket_tid}\u003c/strong\u003e\u003c/a\u003e has been opened by \u003cstrong\u003e{$changer}\u003c/strong\u003e.\u003c/p\u003e\r\n    \u003cp\u003e\r\n        Client: {$client_name}{if $client_id} #{$client_id}{/if}\u003cbr /\u003e\r\n        Department: {$ticket_department}\u003cbr /\u003e\r\n        Subject: {$ticket_subject}\u003cbr /\u003e\r\n        Priority: {$ticket_priority}\r\n    \u003c/p\u003e\r\n    \u003cdiv class=\"quoted-content\"\u003e\r\n        {$newTicket}\r\n    \u003c/div\u003e\r\n{else}\r\n    \u003cp\u003eTicket #\u003ca href=\"{$whmcs_admin_url}supporttickets.php?action=viewticket\u0026id={$ticket_id}\"\u003e\u003cstrong\u003e{$ticket_tid}\u003c/strong\u003e\u003c/a\u003e {if $newReply || $newNote}has had a new {if $newReply}reply{else}note{/if} posted by{else}has been updated by{/if} \u003cstrong\u003e{$changer}\u003c/strong\u003e.\u003c/p\u003e\r\n\r\n    {if $changes}\r\n        \u003ctable class=\"keyvalue-table\" style=\"border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;\"\u003e\r\n            \u003ctbody\u003e\r\n                {foreach $changes as $change}\r\n                    \u003ctr\u003e\r\n                        \u003ctd\u003e{$change@key}:\u003c/td\u003e\r\n                        \u003ctd\u003e\r\n                            \u003cspan style=\"background-color:#ffe7e7;text-decoration:line-through;\"\u003e{$change.old}\u003c/span\u003e\r\n                            \u0026nbsp;\r\n                            \u003cspan style=\"background-color:#ddfade;\"\u003e{$change.new}\u003c/span\u003e\r\n                        \u003c/td\u003e\r\n                    \u003c/tr\u003e\r\n                {/foreach}\r\n            \u003c/tbody\u003e\r\n        \u003c/table\u003e\r\n    {/if}\r\n\r\n    {if $newReply}\r\n        \u003cdiv class=\"quoted-content\"\u003e\r\n            {$newReply}\r\n        \u003c/div\u003e\r\n    {/if}\r\n\r\n    {if $newNote}\r\n        \u003cdiv class=\"quoted-content\"\u003e\r\n            {$newNote}\r\n        \u003c/div\u003e\r\n    {/if}\r\n\r\n    {if $newAttachments}{$newAttachments}{/if}\r\n{/if}\r\n\u003cp\u003e\r\n    You can respond to this ticket by simply replying to this email or through the admin area at the url below.\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n    \u003ca href=\"{$whmcs_admin_url}supporttickets.php?action=viewticket\u0026id={$ticket_id}\"\u003e\r\n        {$whmcs_admin_url}supporttickets.php?action=viewticket\u0026id={$ticket_id}\r\n    \u003c/a\u003e\r\n\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Admin Password Reset Validation",
+                          "subject":  "WHMCS Password Reset",
+                          "message":  "\u003cp\u003eHi {$firstname},\u003c/p\u003e\r\n\u003cp\u003eRecently a request was submitted to reset your admin password. Follow the link below to reset it.\u003c/p\u003e\r\n\u003cp\u003e\u003ca href=\"{$pw_reset_url}\"\u003e{$pw_reset_url}\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003eIf you did not request a password reset, please ignore this email. The password reset link will expire in 2 hours.\u003c/p\u003e\r\n\u003cp\u003e{$whmcs_admin_link}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Admin Password Reset Confirmation",
+                          "subject":  "WHMCS Password Reset Confirmation",
+                          "message":  "\u003cp\u003eHi {$firstname},\u003c/p\u003e\r\n\u003cp\u003eThis is a confirmation that your admin password has now been reset.\u003c/p\u003e\r\n\u003cp\u003eIf you did not initiate this password reset, please notify your system administrator immediately.\u003c/p\u003e\r\n\u003cp\u003e{$whmcs_admin_link}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "SpamExperts Welcome Email",
+                          "subject":  "Welcome to Spam Free Email",
+                          "message":  "\u003cp\u003eCongratulations!\u003c/p\u003e\r\n\u003cp\u003eYour service has been setup and is ready for you to begin using.\u003c/p\u003e\r\n{if $configuration_required}\r\n\u003cp\u003e\u003cstrong\u003eRequired Action\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eTo begin using SpamExperts mail services, you must modify the MX records for your domain to the following:\u003c/p\u003e\r\n\u003cp\u003e\r\n{foreach from=$required_mx_records key=mx_host item=mx_priority}\r\n    {$mx_host} with a recommended priority of {$mx_priority}\u003cbr /\u003e\r\n{/foreach}\r\n\u003c/p\u003e\r\n\u003cp\u003eWe have guides available for this at \u003ca href=\"https://documentation.solarwindsmsp.com/spamexperts/documentation/Content/B_Admin%20Level/domains/mx-records.htm\" target=\"_blank\"\u003ehttps://documentation.solarwindsmsp.com/spamexperts/documentation/Content/B_Admin%20Level/domains/mx-records.htm\u003c/a\u003e\u003c/p\u003e\r\n{/if}\r\n{if $outgoing_service}\r\n\u003cp\u003e\u003cstrong\u003eOutgoing Email Filtering\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eOutgoing Email Filtering protects your reputation by preventing spam \u0026 viruses from leaving \r\nyour network and working to ensure your IPs are protected from being blacklisted.\u003cbr\u003e\r\nTo begin using it, you will need to login to the SpamExperts Control Panel to create \r\nthe outgoing user accounts you will use to send email.\u003cbr\u003e\r\nOnce the user accounts are created, you will need to update your email clients to use \r\nthe new hostname and credentials provided via the SpamExperts Control Panel.\u003cbr\u003e\r\nMore information on how to do this can be found at \u003ca href=\"https://kb.spamexperts.com/36678-getting-started/227750-getting-started-with-outbound\" target=\"_blank\"\u003ehttps://kb.spamexperts.com/36678-getting-started/227750-getting-started-with-outbound\u003c/a\u003e\r\n\u003c/p\u003e\r\n{/if}\r\n{if $archiving_service}\r\n\u003cp\u003e\u003cstrong\u003eEmail Archiving\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eYour purchase included Email Archiving which helps to ensure you will never lose an email again.\u003cbr\u003e\r\nEmail archiving has been automatically enabled and you can review and access your email archives \r\nvia the SpamExperts Control Panel at any time.\r\n\u003c/p\u003e\r\n{/if}\r\n\u003cp\u003e\u003cstrong\u003eManaging your Service\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eYou can access and manage your email filtering at any time from our client area at {$whmcs_link}\u003c/p\u003e\r\n\u003cp\u003eSimply login and look for the SpamExperts Manage link on the homepage.\u003c/p\u003e\r\n\u003cp\u003eIf you need any further assistance, please contact our \u003ca href=\"{$whmcs_url}submitticket.php\"\u003esupport team\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "Weebly Welcome Email",
+                          "subject":  "Welcome to your Beautiful Website",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\r\n\u003cp\u003eCongratulations!\u003c/p\u003e\r\n\u003cp\u003eYour account has been setup and you are ready to begin building your site with Weebly.\u003c/p\u003e\r\n{if $configuration_required}\n\u003cp\u003eTo allow automatic publishing of your site, Weebly require an FTP account to be created and provided to them in their settings.\u003c/p\u003e\r\n{/if}\n\u003cp\u003eGuides for how to get started with Weebly can be found at \u003ca href=\"https://www.weebly.com/app/help/us/en/topics/first-steps\"\u003ehttps://www.weebly.com/app/help/us/en/topics/first-steps\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003eTo access the Weebly site builder and begin building your website, please \u003ca href=\"{$whmcs_url}clientarea.php?action=productdetails\u0026id={$service_id}\"\u003eclick here\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003eIf you need any further assistance, please contact our \u003ca href=\"{$whmcs_url}submitticket.php\"\u003esupport team\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Direct Debit Payment Failed",
+                          "subject":  "Direct Debit Payment Failed",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003eThis is a notice that a recent direct debit payment for you failed.\u003c/p\u003e\n\u003cp\u003eInvoice Date: {$invoice_date_created}\u003cbr /\u003eInvoice No: {$invoice_num}\u003cbr /\u003eAmount: {$invoice_total}\u003cbr /\u003eStatus: {$invoice_status}\u003c/p\u003e\n\u003cp\u003eYou now need to login to your client area to pay the invoice manually.\u003cbr /\u003e{$invoice_link}\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Direct Debit Payment Confirmation",
+                          "subject":  "Direct Debit Payment Confirmation",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003eThis is a payment receipt for Invoice {$invoice_num} generated on {$invoice_date_created}. The payment has been taken automatically via direct debit.\u003c/p\u003e\n\u003cp\u003eAmount: {$invoice_total}\u003cbr /\u003eStatus: {$invoice_status}\u003c/p\u003e\n\u003cp\u003eYou may review your invoice history at any time by logging in to your client area.\u003cbr /\u003e{$invoice_link}\u003c/p\u003e\n\u003cp\u003eNote: This email will serve as an official receipt for this payment.\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Direct Debit Payment Pending",
+                          "subject":  "Direct Debit Payment Pending",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003eThis is a notification that a payment has been requested for Invoice {$invoice_num}. The payment has been taken automatically via direct debit on or around {$invoice_date_due}.\u003c/p\u003e\n\u003cp\u003eAmount: {$invoice_total}\u003cbr /\u003eStatus: {$invoice_status}\u003c/p\u003e\n\u003cp\u003eYou may review your invoice history at any time by logging in to your client area.\u003cbr /\u003e{$invoice_link}\u003c/p\u003e\n\u003cp\u003eNote: This email will serve as an official notification for this payment.\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Credit Card Payment Pending",
+                          "subject":  "Invoice Payment Pending",
+                          "message":  "\u003cp\u003eHi {$client_name},\u003c/p\u003e\r\n\u003cp\u003ePayment is currently pending for invoice #{$invoice_num}.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eInvoice Date:\u003c/strong\u003e {$invoice_date_created}\u003cbr /\u003e\u003cstrong\u003eInvoice #\u003c/strong\u003e{$invoice_num}\u003cbr /\u003e\u003cstrong\u003eAmount Due:\u003c/strong\u003e {$invoice_total}\u003cbr /\u003e\u003cstrong\u003eDue Date:\u003c/strong\u003e {$invoice_date_due}\u003cbr /\u003e\u003cstrong\u003eStatus:\u003c/strong\u003e {$invoice_status}\u003c/p\u003e\r\n\u003cp\u003eWe will process payment using your selected payment method ({$invoice_pay_method_display_name}).\u003c/p\u003e\r\n\u003cp\u003eLog in to your account with us to review your current invoices and payment history.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Payment Reversed Notification",
+                          "subject":  "Payment Reversed Notification",
+                          "message":  "\u003cp\u003eThis is a notification that a transaction has been reversed and follow up may be required.\u003c/p\u003e\n\u003cp\u003e\n    Transaction ID: {$transaction_id}\u003cbr /\u003e\n    Transaction Date: {$transaction_date}\u003cbr /\u003e\n    Transaction Amount: {$transaction_amount}\u003cbr /\u003e\n    Payment Method: {$payment_method}\u003cbr /\u003e\n    Invoice ID: {$invoice_id}\u003cbr /\u003e\n\u003c/p\u003e\n\u003cp\u003e{$whmcs_admin_link}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "SSL Certificate Configuration Required",
+                          "subject":  "SSL Certificate Configuration Required",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\r\n\u003cp\u003eThank you for your order for an SSL Certificate. Before you can use your certificate, it requires configuration which can be done at the URL below.\u003c/p\u003e\r\n\u003cp\u003e{$ssl_configuration_link}\u003c/p\u003e\r\n\u003cp\u003eInstructions are provided throughout the process but if you experience any problems or have any questions, please open a ticket for assistance.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "Upgrade Order Cancelled",
+                          "subject":  "Pending Upgrade Order Cancelled",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\r\n\u003cp\u003eRe: {$service_product_name}{if $service_domain} ({$service_domain}){/if}\u003c/p\u003e\r\n\u003cp\u003e\r\n    Recently you placed an upgrade order with us.\u003cbr\u003e\r\n    Today your automated renewal invoice has been generated for the product/service listed above which has invalidated the upgrade quote and invoice.\u003cbr\u003e\r\n    As a result, your upgrade order has now been cancelled.\r\n\u003c/p\u003e\r\n\u003cp\u003eShould you wish to continue with the upgrade, we ask that you please first pay the renewal invoice, after which you will be able to order the upgrade again and simply pay the difference.\u003c/p\u003e\r\n\u003cp\u003eWe thank you for your business.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e\r\n",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "notification",
+                          "name":  "Default Notification Message",
+                          "subject":  "Notification Message",
+                          "message":  "\u003ch2\u003e\u003ca href=\"{$notification_url}\"\u003e{$notification_title}\u003c/a\u003e\u003c/h2\u003e\r\n\u003cdiv\u003e{$notification_message}\u003c/div\u003e\r\n{foreach from=$notification_attributes item=$attribute}\r\n\u003cdiv\u003e\r\n\u003cdiv\u003e{$attribute.label}: {if $attribute.icon}\u003cimg src=\"{$attribute.icon}\" alt=\"\" /\u003e{/if}{if $attribute.style}\u003cspan class=\"{$attribute.style}\"\u003e{/if}{if $attribute.url}\u003ca href=\"{$attribute.url}\"\u003e{$attribute.value}\u003c/a\u003e\r\n{else}{$attribute.value}{/if}{if $attribute.style}\u003c/span\u003e{/if}\u003c/div\u003e\r\n\u003c/div\u003e\r\n{/foreach}",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Mention Notification",
+                          "subject":  "{$mention_admin_name} mentioned you in a {$mention_entity}",
+                          "message":  "\u003cp\u003e{$mention_admin_name} mentioned you in {$mention_entity_description}:\u003c/p\u003e\r\n\u003cblockquote\u003e\r\n{$message}\r\n\u003c/blockquote\u003e\r\n\u003cp\u003e\u003ca href=\"{$mention_view_url}\" target=\"_blank\"\u003e{$mention_entity_action}\u003c/a\u003e\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "SiteLock Welcome Email",
+                          "subject":  "Getting Started with SiteLock",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003eThank you for purchasing the SiteLock service. You are just a few steps away from securing your website.\u003c/p\u003e\n\u003cp\u003eBelow are the details you will need to administer and use the SiteLock service.\u003c/p\u003e\n{if ($sitelock_requires_ftp \u0026\u0026 !$sitelock_ftp_auto_provisioned) || ($sitelock_requires_dns \u0026\u0026 !$sitelock_dns_auto_provisioned)}\n    \u003cp\u003e\u003cb\u003eAdditional Setup Required\u003c/b\u003e\u003c/p\u003e\n{/if}\n{if $sitelock_requires_ftp \u0026\u0026 !$sitelock_ftp_auto_provisioned}\n    \u003cp\u003eTo allow SiteLock to automatically fix issues that are discovered with your website, SiteLock requires FTP access to your website.\u003c/p\u003e\n    \u003cp\u003eUnfortunately we were unable to provision these automatically and so you must supply FTP credentials to SiteLock via the SiteLock Control Panel.\u003c/p\u003e\n    \u003cp\u003eTo do this, please login to our \u003ca href=\"{$whmcs_url}\"\u003eclient area\u003c/a\u003e and click the Login button found under the SiteLock service. Then navigate to Sites \u003e FTP Credentials within the SiteLock control panel.\u003c/p\u003e\n{/if}\n{if $sitelock_requires_dns \u0026\u0026 !$sitelock_dns_auto_provisioned}\n    \u003cp\u003eTo allow SiteLock to provide WAF and CDN services for your website, SiteLock requires some DNS changes.\u003c/p\u003e\n    \u003cp\u003eUnfortunately we were unable to provision these automatically and so you must make these changes manually.\u003c/p\u003e\n    \u003cp\u003eTo do this, please modify your domain DNS host records as follows:\u003c/p\u003e\n    \u003cp\u003e{$sitelock_dns_host_record_info}\u003c/p\u003e\n{/if}\n\u003cp\u003e\u003cb\u003eUsing SiteLock\u003c/b\u003e\u003c/p\u003e\n\u003cp\u003eTo use the SiteLock service, login to our \u003ca href=\"{$whmcs_url}\"\u003eclient area\u003c/a\u003e and click the Login button found under the SiteLock service.\u003c/p\u003e\n\u003cp\u003eIf you have any questions, please reply to this email. Thank you for choosing our services.\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invoice",
+                          "name":  "Invoice Modified",
+                          "subject":  "Invoice #{$invoice_num} Updated",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\r\n\u003cp\u003eThis is a notice that invoice #{$invoice_num} which was originally generated on {$invoice_date_created} has been updated.\u003c/p\u003e\r\n\u003cp\u003eYour payment method is: {$invoice_payment_method}\u003c/p\u003e\r\n\u003cp\u003e\r\n    Invoice #{$invoice_num}\u003cbr\u003e\r\n    Amount Due: {$invoice_balance}\u003cbr\u003e\r\n    Due Date: {$invoice_date_due}\r\n\u003c/p\u003e\r\n\u003cp\u003eInvoice Items\u003c/p\u003e\r\n\u003cp\u003e\r\n    {$invoice_html_contents}\u003cbr\u003e\r\n    ------------------------------------------------------\r\n\u003c/p\u003e\r\n\u003cp\u003eYou can login to our client area to view and pay the invoice at {$invoice_link}\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin",
+                          "name":  "Service Renewal Failed",
+                          "subject":  "WHMCS Service Renewal Failed",
+                          "message":  "\u003cp\u003e\r\n    An automatic renewal attempt was triggered for this service but failed. The renewal will not be attempted again automatically. Please resolve the error and try again.\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n    Client ID: {$client_id}\u003cbr /\u003e\r\n    Service ID: {$service_id}\u003cbr /\u003e\r\n    Product/Service: {$service_product}\u003cbr /\u003e\r\n    Domain: {$service_domain}\u003cbr /\u003e{if $addon_id}\r\n    Addon ID: {$addon_id}\u003cbr /\u003e\r\n    Addon: {$addon_name}\u003cbr /\u003e\r\n    {/if}Error: {$error_msg}\r\n\u003c/p\u003e\r\n\u003cp\u003e\r\n    \u003ca href=\"{$whmcs_admin_url}/clientsservices.php?userid={$client_id}\u0026id={$service_id}{if $addon_id}\u0026aid={$addon_id}{/if}\"\u003e\r\n        Go to {if $addon_id}addon{else}service{/if}\r\n    \u003c/a\u003e\r\n\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "domain",
+                          "name":  "Domain Transfer Completed",
+                          "subject":  "Transfer Completed for {$domain_name}",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003eWe are pleased to confirm that your recent domain transfer has now been completed.\u003c/p\u003e\n\u003cp\u003eOrder Date: {$domain_reg_date}\u003cbr /\u003e\nDomain: {$domain_name}\u003cbr /\u003e\nStatus: {$domain_status}\u003c/p\u003e\n\u003cp\u003eYou may now login to your client area at {$whmcs_link} to manage your domain.\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "CodeGuard Welcome Email",
+                          "subject":  "Welcome to Website Protection",
+                          "message":  "\u003cp\u003eCongratulations!\u003c/p\u003e\r\n\u003cp\u003eYour CodeGuard website backup service has been provisioned successfully and is now ready for use!\u003c/p\u003e\r\n{if $configuration_required}\r\n\u003cp\u003eTo begin using the service, you will need to login and provide the SFTP or SSH credentials required to access your website. Our guide that demonstrates how to do this can be found at \u003ca href=\"https://codeguard.zendesk.com/hc/en-us/articles/115000610543-How-do-I-back-up-my-website\" target=\"_blank\"\u003ehttps://codeguard.zendesk.com/hc/en-us/articles/115000610543-How-do-I-back-up-my-website\u003c/a\u003e\u003c/p\u003e\r\n{else}\r\n\u003cp\u003eWe have successfully configured daily backups for your website files and the first backup will be performed shortly. Once that has been performed, backups will be performed daily. If at any time a backup encounters problems, we will notify you by email.\u003c/p\u003e\r\n\u003cp\u003eIf you have databases that need to be backed up, CodeGuard will attempt to add them automatically after you have configured your website backup. Alternatively, database backups can be added manually. Our guide for how to do this can be found at \u003ca href=\"https://codeguard.zendesk.com/hc/en-us/articles/115000604663-CodeGuard-Database-Backup-Walkthrough\" target=\"_blank\"\u003ehttps://codeguard.zendesk.com/hc/en-us/articles/115000604663-CodeGuard-Database-Backup-Walkthrough\u003c/a\u003e\u003c/p\u003e\r\n{/if}\r\n\u003cp\u003eYou can access and manage your website backups at any time from our \u003ca href=\"{$whmcs_url}\"\u003eclient area\u003c/a\u003e. Simply login and look for the CodeGuard Manage link on the homepage.\u003c/p\u003e\r\n\u003cp\u003eIf you need any further assistance, you may contact our \u003ca href=\"{$whmcs_url}submitticket.php\"\u003esupport team\u003c/a\u003e at any time.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "SiteLock VPN Welcome Email",
+                          "subject":  "Getting Started with SiteLock VPN",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\r\n\u003cp\u003eThank you for your purchase to secure your personal and business data. You now ready to have a secure end-to-end connection for browsing and transmitting data through the internet via SiteLock VPN.\u003c/p\u003e\r\n\u003cp\u003eBelow are a few simple steps to setup your VPN credentials and begin securely browsing the web.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eStep 1 – Login and Setup VPN Credentials\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eTo set up your account you must first access the SiteLock dashboard.  Login to our \u003ca href=\"{$whmcs_url}\"\u003eclient area\u003c/a\u003e and click the Login button found under the SiteLock VPN service to access the dashboard.\u003c/p\u003e\r\n\u003cp\u003eOnce you’re logged in click on ‘VPN’ to be directed to the Sitelock VPN configuration screen.\u003c/p\u003e\r\n\u003cp\u003eNext, setup your user ID and set your password for accessing VPN.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eStep 2 – Download and Install VPN client appStep 2 – Download and Install VPN client app\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eOnce your VPN login and password has been set, you can download the VPN clients for your preferred devices.\u003c/p\u003e\r\n\u003cp\u003eApple iOS - \u003ca href=\"https://itunes.apple.com/us/app/sitelock-vpn/id1446325257?ls=1\u0026mt=8\"\u003eDownload the iOS app\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003eAndroid - \u003ca href=\"https://play.google.com/store/apps/details?id=com.sitelock.vpn.android\"\u003eDownload the Android app\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003emacOS - \u003ca href=\"https://s3.us-east-2.amazonaws.com/sitelock-vpn/mac/SiteLock+VPN.dmg\"\u003eDownload the macOS app\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003eWindows - \u003ca href=\"https://s3.us-east-2.amazonaws.com/sitelock-vpn/app/Setup_1.0.1.0.exe\"\u003eDownload the Windows app\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eStep 3 – Login and Begin Browsing Securely\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003eOnce the VPN client installation is complete, log in with your user ID and password that was just setup to connect to any of the 1,100+ secure servers worldwide.\u003c/p\u003e\r\n\u003cp\u003eComplete instructions can also be downloaded on the upper right-hand corner of your VPN configuration screen.\u003c/p\u003e\r\n\u003cp\u003eIf you have any questions, please contact us or reply to this email. Thank you for choosing our services.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "Marketgoo Welcome Email",
+                          "subject":  "Getting Started with Marketgoo",
+                          "message":  "\u003cp\u003eHi {$client_first_name},\u003c/p\u003e\r\n\u003cp\u003eThank you for your purchase. Your website is now being analyzed by marketgoo. You’re now ready to take the next steps to improve your search engine ranking.\u003c/p\u003e\r\n\u003cp\u003eTo login and get started straight away, or check your SEO progress at any time, simply login to our client area and follow the link to access the marketgoo dashboard.\u003c/p\u003e\u003cp\u003e\u003ca href=\"{$whmcs_url}clientarea.php\"\u003e{$whmcs_url}clientarea.php\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003eIf you have any questions or need help, please contact us by opening a \u003ca href=\"{$whmcs_url}submitticket.php\"\u003esupport ticket\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "user",
+                          "name":  "Email Address Verification",
+                          "subject":  "Email Address Verification",
+                          "message":  "\u003cp\u003eWelcome to {$company_name}\u003c/p\u003e\r\n\u003cp\u003ePlease click on the link below to verify your email address. This is required to confirm ownership of the email address.\u003c/p\u003e\r\n\u003cp\u003e\u003ca href=\"{if isset($verification_url)}{$verification_url}{/if}\"\u003eVerify your email address\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003eIf you\u0027re having trouble, try copying and pasting the following URL into your browser:\u003cbr\u003e{if isset($verification_url)}{$verification_url}{/if}\u003c/p\u003e\r\n\u003cp\u003eThis link is valid for 60 minutes only. If it has expired, login to our \u003ca href=\"{$whmcs_url}\"\u003eclient area\u003c/a\u003e to request a new link.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "user",
+                          "name":  "Password Reset Validation",
+                          "subject":  "Password Reset Validation",
+                          "message":  "\u003cp\u003eTo reset your password, please click on the link below.\u003c/p\u003e\r\n\u003cp\u003e\u003ca href=\"{if isset($reset_password_url)}{$reset_password_url}{/if}\"\u003eReset your password\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003eIf you\u0027re having trouble, try copying and pasting the following URL into your browser:\u003cbr\u003e{if isset($reset_password_url)}{$reset_password_url}{/if}\u003c/p\u003e\r\n\u003cp\u003eIf you did not request this reset, you can ignore this email. It will expire in 2 hours time.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "user",
+                          "name":  "Password Reset Confirmation",
+                          "subject":  "Your password has been reset",
+                          "message":  "\u003cp\u003eYour password has been reset.\u003c/p\u003e\r\n\u003cp\u003eIf you did not request this reset, please \u003ca href=\"{$whmcs_url}\"\u003econtact us\u003c/a\u003e.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "invite",
+                          "name":  "Account Access Invitation",
+                          "subject":  "{if $invite_sent_by_admin}An agent of {$company_name} has sent you an invite{else}{$invite_sender_name} has invited you to their account{/if}",
+                          "message":  "\r\n\u003ch2\u003eYou\u0027ve been given access to {$invite_account_name}.\u003c/h2\u003e\r\n\u003cp\u003e{if $invite_sent_by_admin}An agent of {$company_name}{else}{$invite_sender_name}{/if} has given you access to the {$invite_account_name} account with {$company_name}.\u003c/p\u003e\r\n\u003cp\u003eTo accept the invite, please click on the link below.\u003c/p\u003e\r\n\u003cp\u003e\u003ca href=\"{$invite_accept_url}\"\u003eAccept invitation\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003eInvitations are valid for 7 days from the time of issue. After that time, you will need to request a new invite from the account administrator.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "Open-Xchange Welcome Email",
+                          "subject":  "Your new professional email",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003e\n    Thank you for purchasing {$service_product_name} from Open-Xchange.\u003cbr\u003e\n    Your email service has been set up and is ready for you to begin creating email accounts.\n\u003c/p\u003e\n{if $configuration_required}\n\u003cp\u003e\n    \u003cstrong\u003eRequired Action\u003c/strong\u003e\u003cbr\u003e\n    To begin using Open-Xchange mail services, you must modify the MX records for your domain to the following:\u003cbr\u003e\n\u003cpre\u003e{foreach from=$required_mx_records key=mx_host item=mx_priority}\n{$mx_host} with a recommended priority of {$mx_priority}\n{/foreach}\u003c/pre\u003e\n    The following SPF record is also recommended:\n    \u003cpre\u003e{$required_spf_record}\u003c/pre\u003e\n\u003c/p\u003e\n{/if}\n\u003cp\u003e\n    To create, edit and administer your email addresses and passwords, please visit the \"Email User Management\" pages in your\n    \u003ca href=\"{$whmcs_url}clientarea.php?action=productdetails\u0026id={$service_id}\"\u003eclient area\u003c/a\u003e.\n\u003c/p\u003e\n\u003cp\u003eYou can access OX App Suite via \u003ca href=\"{$webmail_link}\"\u003ethe OX App Suite Cloud portal\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\n    \u003cstrong\u003eMobile Access\u003c/strong\u003e\u003cbr\u003e\n    To configure and sync email and PIM data on your mobile device, please refer to the \"Connect Your Device\" Wizard in App Suite.\n    You can find it under your profile icon in the top right-hand corner of your App Suite Webmail interface.\u003cbr\u003e\n    You can also download the App Suite Mobile App here: \u003cbr\u003e\n    \u003ca href=\"https://apps.apple.com/us/app/ox-mail-by-open-xchange/id1385582725\"\u003eiOS\u003c/a\u003e or\n    \u003ca href=\"https://play.google.com/store/apps/details?id=com.openxchange.mobile.oxmail\"\u003eAndroid\u003c/a\u003e\n\u003c/p\u003e\n{if $migration_tool_url}\n\u003cp\u003e\n    \u003cstrong\u003eMigrations\u003c/strong\u003e\u003cbr\u003e\n    OX App Suite has a quick and easy self-service migration tool to help you move your users.\n    You can find it here: \u003ca href=\"{$migration_tool_url}\"\u003eMigration Tool\u003c/a\u003e\u003cbr\u003e\n\u003c/p\u003e\n{/if}\n\u003cp\u003eIf you have any questions, please contact our \u003ca href=\"{$whmcs_url}submitticket.php\"\u003esupport team\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eThank you for choosing us as your trusted service provider.\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "user",
+                          "name":  "User Identity Verification",
+                          "subject":  "Identity Verification Required",
+                          "message":  "\u003cp\u003eDear {$user_first_name},\u003c/p\u003e\r\n\u003cp\u003eYou have been requested to provide additional verification for your user account {$user_email} at {$company_name}.\u003c/p\u003e\r\n\u003cp\u003eLog in to your account, and then locate and click the Submit Documents button to follow the steps for the secure submission process.\u003c/p\u003e\r\n\u003cp\u003ePlease complete this verification process to avoid possible interruptions with your account.\u003c/p\u003e\r\n\u003cp\u003eClick on the link below to be taken to the Client Area:\u003c/p\u003e\r\n\u003cp\u003e\u003ca href=\"{$whmcs_url}\"\u003e{$whmcs_url}\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "domain",
+                          "name":  "Upcoming Free Domain Renewal Notice",
+                          "subject":  "Upcoming Domain Renewal Notice",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\r\n\u003cp\u003eThis is a reminder that the domain listed below is scheduled to expire soon.\u003c/p\u003e\r\n\u003cp\u003eDomain Name - Expiry Date - Description\u003c/p\u003e\r\n\u003cp\u003e--------------------------------------------------------------\u003c/p\u003e\r\n\u003cp\u003e{$domain_name} - {$domain_next_due_date} - Expires in {$domain_days_until_nextdue} Days\u003c/p\u003e\r\n{if $autoRenewalDisabled || (!$freeDomainWithService \u0026\u0026 $freeDomainAutoRenewRequiresProduct)}\r\n\u003cp\u003ePlease be aware that if your domain name expires, any website or email services associated with it will stop working.\u003c/p\u003e\r\n\u003cp\u003e\u003ca href=\"{$domain_renewal_url}\"\u003eRenew your domain now\u003c/a\u003e to avoid an interruption in service.\u003c/p\u003e\r\n{elseif $freeDomainWithService}\r\n\u003cp\u003e\u003cstrong\u003eThis is an informational notice\u003c/strong\u003e. Because this domain name is associated with a service including a free domain renewal, no action is needed to renew this domain automatically.\u003c/p\u003e\r\n{else}\r\n\u003cp\u003e\u003cstrong\u003eThis is an informational notice\u003c/strong\u003e. This domain will automatically renew and you do not need to take any further action.\u003c/p\u003e\r\n{/if}\r\n\u003cp\u003eTo view and manage your domains, you can log in to our client area here: \u003ca href=\"{$domains_manage_url}\"\u003eClient Area\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003eIf you have any questions, please reply to this email. Thank you for using our domain name services.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "Site Builder Welcome Email",
+                          "subject":  "Welcome to Your New Website Builder",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\r\n\u003cp\u003eCongratulations!\u003c/p\u003e\r\n\u003cp\u003eYour account has been set up and you are ready to begin building your website.\u003c/p\u003e\r\n\u003cp\u003e{if $configuration_required}\u003c/p\u003e\r\n\u003cp\u003eTo allow automatic publishing of your site, an FTP account is required. You can provide FTP details in the client area.\u003c/p\u003e\r\n\u003cp\u003e{/if}\u003c/p\u003e\r\n\u003cp\u003eTo access the site builder and begin building your website, please \u003ca href=\"{$whmcs_url}clientarea.php?action=productdetails\u0026amp;id={$service_id}\"\u003eclick here\u003c/a\u003e.\u003c/p\u003e\r\n\u003cp\u003eIf you need any further assistance, please contact our \u003ca href=\"{$whmcs_url}submitticket.php\"\u003esupport team\u003c/a\u003e.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "WP Toolkit Welcome Email",
+                          "subject":  "{$service_product_name}",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003eThank you for purchasing {$service_product_name}!\u003c/p\u003e\n\u003cp\u003e{$service_product_name} has now been activated for your account with domain {$service_domain} and you can begin using the advanced features of {$service_product_name} immediately.\u003c/p\u003e\n\u003cp\u003eYou can access {$service_product_name} via your hosting service or by logging in to your client area using the link below.\u003c/p\u003e\n\u003cp\u003e{$whmcs_link}\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "WordPress Installation Welcome Email",
+                          "subject":  "Welcome to WordPress",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003eYour new WordPress® blog is ready. This email contains all of the important information to get you started.\u003c/p\u003e\n\u003cp\u003eYou and your visitors can find your new WordPress installation at: {$instance_url}\u003c/p\u003e\n\u003cp\u003eTo configure your blog and add content, visit the Client Area and click \u003cstrong\u003eAdmin\u003c/strong\u003e in the WordPress section: \u003ca href=\"{$whmcs_url}\"\u003e{$whmcs_url}\u003c/a\u003e\u003c/p\u003e\n{if !empty($admin_password_applied)}\n\u003cp\u003eYou can use these details to log in:\u003cbr\u003e\nUsername: {$admin_username}\u003cbr\u003e\nPassword: {$admin_password}\u003c/p\u003e\n{/if}\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "SSL Certificate Reissue Due",
+                          "subject":  "[Action Required] Your SSL certificate is due for reissuance",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003eYour SSL certificate is nearing the end of its current term.\u003c/p\u003e\n\u003cp\u003e\n    Certificate Product: {$service_product_name}\u003cbr\u003e\n    Domain: {$service_domain}\u003cbr\u003e\n    Registration Date: {$service_reg_date}\u003cbr\u003e\n    Next Due Date: {$service_next_due_date}\n\u003c/p\u003e\n\n\u003cp\u003eDue to the limits from the Certification Authority Browser Forum, you must reissue SSL certificates during their term.\u003c/p\u003e\n\u003cp\u003e\n    Unfortunately, we cannot automatically reissue your certificate because {if $noSupport}it does not currently support automatic reissuance{else}the reissuance request failed{/if}.\u003cbr\u003e\n    You must initiate reissuance manually.\n\u003c/p\u003e\n\u003cp\u003eTo manage your certificate, visit our Client Area using the link below. You can initiate reissuance by selecting \"Reissue Certificate\" and following the displayed steps.\u003c/p\u003e\n\u003cp\u003e{$certificate_manage_link}\u003c/p\u003e\n\u003cp\u003eFor assistance regarding your SSL certificate, contact our \u003ca href=\"{$whmcs_url}submitticket.php\"\u003esupport team\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "SSL Certificate Validation Manual Intervention",
+                          "subject":  "[Action Required] SSL Certificate Validation",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003eYour recent SSL certificate order requires validation that we cannot complete automatically.\u003c/p\u003e\n\u003cp\u003e\n    Certificate Product: {$service_product_name}\u003cbr\u003e\n    Domain: {$service_domain}\u003cbr\u003e\n    Registration Date: {$service_reg_date}\u003cbr\u003e\n    Next Due Date: {$service_next_due_date}\n\u003c/p\u003e\n\u003cp\u003e{if $file_validation}\u003c/p\u003e\n\u003cp\u003eValidation Method: HTTP File\u003c/p\u003e\n\u003cp\u003eTo complete validation successfully, you must create a file with the details below in the root directory of your hosting account.\u003c/p\u003e\n\u003cp\u003e\n    Filepath/Filename: {$file_name}\u003cbr\u003e\n    File Contents: {$validation_contents}\n\u003c/p\u003e\n\u003cp\u003e{else if $dns_validation}\u003c/p\u003e\n\u003cp\u003eValidation Method: DNS\u003c/p\u003e\n\u003cp\u003eTo complete validation successfully, you must create the following DNS record with your domain registrar or DNS provider.\u003c/p\u003e\n\u003cp\u003e\n    Record Type: TXT\u003cbr\u003e\n    Record Contents: {$validation_contents}\n\u003c/p\u003e\n\u003cp\u003e{/if}\u003c/p\u003e\n\u003cp\u003eWhen you complete the above steps, our systems will detect this automatically and continue processing your order. No further action is required.\u003c/p\u003e\n\u003cp\u003eFor assistance regarding your SSL certificate, contact our \u003ca href=\"{$whmcs_url}submitticket.php\"\u003esupport team\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "SSL Certificate Installed",
+                          "subject":  "Your website is now secured with SSL!",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003eYour recent SSL certificate order is complete and you have secured your website with SSL. No further action is required.\u003c/p\u003e\n\u003cp\u003e\n    Certificate Product: {$service_product_name}\u003cbr\u003e\n    Domain: {$service_domain}\u003cbr\u003e\n    Registration Date: {$service_reg_date}\u003cbr\u003e\n    Next Due Date: {$service_next_due_date}\u003cbr\u003e\n\u003c/p\u003e\n\u003cp\u003eTo manage your certificate, visit our Client Area using the link below.\u003c/p\u003e\n\u003cp\u003e{$certificate_manage_link}\u003c/p\u003e\n\u003cp\u003eFor assistance regarding your SSL certificate, contact our \u003ca href=\"{$whmcs_url}submitticket.php\"\u003esupport team\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "SSL Certificate Issued",
+                          "subject":  "Your SSL certificate is now ready for installation!",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\n\u003cp\u003eYour recent SSL certificate order is complete and is now ready for installation.\u003c/p\u003e\n\u003cp\u003e\n    Certificate Product: {$service_product_name}\u003cbr\u003e\n    Domain: {$service_domain}\u003cbr\u003e\n    Registration Date: {$service_reg_date}\u003cbr\u003e\n    Next Due Date: {$service_next_due_date}\n\u003c/p\u003e\n\u003cp\u003eYou are receiving this email because we cannot automatically install certificate. You must install it manually.\u003c/p\u003e\n\u003cp\u003eTo manage your certificate, visit our Client Area using the link below.\u003c/p\u003e\n\u003cp\u003e{$certificate_manage_link}\u003c/p\u003e\n\u003cp\u003eFor assistance regarding your SSL certificate, contact our \u003ca href=\"{$whmcs_url}submitticket.php\"\u003esupport team\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "XOVI NOW Welcome Email",
+                          "subject":  "Get Started with XOVI NOW",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\r\n\u003cp\u003eWelcome to XOVI NOW! You\u0027re ready to find relevant keywords, optimize your content, and get to the top of the Google® search results.\u003c/p\u003e\r\n\u003cp\u003eLog in now to complete the setup wizard so that XOVI NOW can begin analyzing your website. After it finishes, you\u0027ll be able to view your rankings, keywords, and visibility and get started improving your position in the XOVI NOW Advisor.\u003c/p\u003e\r\n\u003cp\u003e\r\nTo get started, log in to our Client Area and follow the link to access XOVI NOW:\u003cbr\u003e\r\n{$whmcs_url}clientarea.php\r\n\u003c/p\u003e\r\n\u003cp\u003eIf you need any further assistance, you may contact our support team at any time.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "NordVPN Welcome Email",
+                          "subject":  "Getting Started with NordVPN",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\u003cp\u003eThank you for purchasing NordVPN to secure your personal and business data. You will receive an email from NordVPN containing your activation link soon. If you don’t see it in your inbox, check your spam folder.\u003c/p\u003e\u003cp\u003eWith 5,500+ servers across the globe, NordVPN gives you peace of mind when you use public Wi-Fi®, access personal and work accounts on the road, or just want to keep your browsing history to yourself.\u003c/p\u003e\u003cp\u003eIf you have questions about NordVPN or need technical support, contact \u003ca href=\"https://support.nordvpn.com/\"\u003eNordVPN support\u003c/a\u003e.\u003c/p\u003e\u003cp\u003eIf you have order or billing questions, contact our support team at \u003ca href=\"{$whmcs_url}/submitticket.php\"\u003eSubmit a Ticket\u003c/a\u003e.\u003c/p\u003e\u003cp\u003eThank you for choosing our services!\u003c/p\u003e\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "360 Monitoring Welcome Email",
+                          "subject":  "Welcome to 360 Monitoring. Get started with monitoring now!",
+                          "message":  "\u003cp\u003eHi, {$client_first_name}!\u003c/p\u003e\n\u003cp\u003eWelcome to 360 Monitoring! Your 360 Monitoring account is registered, your specified domain ({$domain}) is configured, and you are ready to perform real-time monitoring.\u003c/p\u003e\n\u003cp\u003eTo access the 360 Monitoring dashboard and view results, make adjustments, or include additional websites based on your chosen plan, log in to our Client Area and click Login under 360 Monitoring.\u003c/p\u003e\n\u003cp\u003eFor more information on 360 Monitoring features, including{if $numberOfMonitors \u003e 1} adding websites,{if $numberOfServers \u003e 0} servers,{/if}{/if} dashboards, reports, and more, visit the \u003ca href=\"https://docs.360monitoring.com/docs\"\u003e\u003cstrong\u003e360 Monitoring documentation\u003c/strong\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "product",
+                          "name":  "Sitejet Builder Welcome Email",
+                          "subject":  "Welcome to Sitejet Builder, Your Professional Website Builder",
+                          "message":  "\u003cp\u003eDear {$client_name},\u003c/p\u003e\r\n\u003cp\u003eCongratulations!\u003c/p\u003e\r\n\u003cp\u003eYour account has been set up and you are ready to begin building your website.\u003c/p\u003e\r\n\u003cp\u003eYou can directly access Sitejet Builder and edit your website from many places within the \u003ca href=\"{$whmcs_url}clientarea.php\"\u003eclient area\u003c/a\u003e, including the homepage.\u003c/p\u003e\r\n\u003cp\u003eIf you need any further assistance, please contact our \u003ca href=\"{$whmcs_url}submitticket.php\"\u003esupport team\u003c/a\u003e.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e",
+                          "plaintext":  0
+                      },
+                      {
+                          "type":  "admin_invite",
+                          "name":  "Admin Invitation",
+                          "subject":  "You\u0027ve been invited to use WHMCS",
+                          "message":  "\u003ch2\u003eYou\u0027ve been invited to use WHMCS.\u003c/h2\u003e\r\n\u003cp\u003e{$invite_sender_name} has invited you to start using WHMCS for {$company_name}. WHMCS is a billing and automation platform for online businesses.\u003c/p\u003e\r\n\u003cp\u003eTo accept the invitation and set up your admin login credentials, click the link below:\u003c/p\u003e\r\n\u003cp\u003e\u003ca href=\"{$invite_accept_url}\"\u003eAccept Invitation\u003c/a\u003e\u003c/p\u003e\r\n\u003cp\u003eThis invitation will expire after {$expiration_period_in_days} days. After this date, you will need to contact {$company_name} to request a new invitation.\u003c/p\u003e\r\n\u003cp\u003e{$signature}\u003c/p\u003e\r\n\u003cp\u003eNeed help? See \u003ca href=\"https://go.whmcs.com/2481/accept-admin-invite\"\u003eWHMCS\u0027s documentation\u003c/a\u003e to get started.\u003c/p\u003e",
+                          "plaintext":  0
+                      }
+                  ]
+}
